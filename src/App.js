@@ -5,7 +5,7 @@ function App() {
     <div>
       <h1>Components</h1>
       <div>
-        <Button>This is another text</Button>
+        <Button>Primary</Button>
       </div>
     </div>
   );
