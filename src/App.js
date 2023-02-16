@@ -6,13 +6,22 @@ function App() {
     <div>
       <h1 className="text-3xl font-bold underline">Components</h1>
       <div>
-        <Button primary>
+        <Button
+          primary
+          onClick={() => console.log('You have clicked the button.')}
+        >
           <GoBell />
           Primary
         </Button>
       </div>
       <div>
-        <Button primary rounded>
+        <Button
+          primary
+          rounded
+          onMouseEnter={() =>
+            console.log('You have entered the button with your mouse.')
+          }
+        >
           <GoCloudDownload />
           Primary
         </Button>
