@@ -9,6 +9,7 @@ function App() {
         <Button
           primary
           onClick={() => console.log('You have clicked the button.')}
+          className="mb-5"
         >
           <GoBell />
           Primary
