@@ -19,6 +19,7 @@ function App() {
         <Button
           primary
           rounded
+          outline
           onMouseEnter={() =>
             console.log('You have entered the button with your mouse.')
           }

@@ -15,11 +15,11 @@ function Button({
     rest.className,
     'flex items-center px-3 py-1.5 border',
     {
-      'border-blue-600 bg-blue-500 text-white': primary,
-      'border-gray-900 bg-gray-800 text-white': secondary,
-      'border-green-600 bg-green-500 text-white': success,
-      'border-yellow-500 bg-yellow-400 text-white': warning,
-      'border-red-600 bg-red-500 text-white': danger,
+      'border-blue-600 bg-blue-500': primary,
+      'border-gray-900 bg-gray-800': secondary,
+      'border-green-600 bg-green-500': success,
+      'border-yellow-500 bg-yellow-400': warning,
+      'border-red-600 bg-red-500': danger,
       'rounded-full': rounded,
       'bg-white': outline,
       'text-blue-500': outline && primary,
@@ -27,6 +27,8 @@ function Button({
       'text-green-600': outline && success,
       'text-yellow-500': outline && warning,
       'text-red-600': outline && danger,
+      // TODO find a better way
+      'text-white': !outline,
     }
   );
   return (
