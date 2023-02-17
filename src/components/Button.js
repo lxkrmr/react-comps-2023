@@ -9,10 +9,11 @@ function Button({
   danger,
   outline,
   rounded,
+  className,
   ...rest
 }) {
   const classes = classnames(
-    rest.className,
+    className,
     'flex items-center px-3 py-1.5 border',
     {
       'border-blue-600 bg-blue-500': primary,
