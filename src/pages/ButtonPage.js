@@ -1,7 +1,7 @@
-import Button from './components/Button';
+import Button from '../components/Button';
 import { GoBell, GoCloudDownload, GoDatabase } from 'react-icons/go';
 
-function App() {
+function ButtonPage() {
   return (
     <div>
       <h1 className="text-3xl font-bold underline">Components</h1>
@@ -50,4 +50,4 @@ function App() {
   );
 }
 
-export default App;
+export default ButtonPage;
