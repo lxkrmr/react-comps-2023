@@ -9,11 +9,9 @@ function Accordion({ items }) {
   );
 
   const handleClick = (index) => {
-    if (index === expandedIndex) {
-      setExpandedIndex(INDEX_TO_COLLAPSE_ALL_SECTIONS);
-    } else {
-      setExpandedIndex(index);
-    }
+    setExpandedIndex((expandedIndex) => {
+      return index === expandedIndex ? INDEX_TO_COLLAPSE_ALL_SECTIONS : index;
+    });
   };
 
   const renderedItems = items.map((item, index) => {
