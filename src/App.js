@@ -1,53 +1,28 @@
-import Button from './components/Button';
-import { GoBell, GoCloudDownload, GoDatabase } from 'react-icons/go';
+import Accordion from './components/Accordion';
 
 function App() {
-  return (
-    <div>
-      <h1 className="text-3xl font-bold underline">Components</h1>
-      <div>
-        <Button
-          primary
-          onClick={() => console.log('You have clicked the button.')}
-          className="mb-5"
-        >
-          <GoBell />
-          Primary
-        </Button>
-      </div>
-      <div>
-        <Button
-          primary
-          rounded
-          outline
-          onMouseEnter={() =>
-            console.log('You have entered the button with your mouse.')
-          }
-        >
-          <GoCloudDownload />
-          Primary
-        </Button>
-      </div>
-      <div>
-        <Button secondary rounded>
-          <GoDatabase />
-          Secondary
-        </Button>
-      </div>
-      <div>
-        <Button secondary>Secondary</Button>
-      </div>
-      <div>
-        <Button success>Success</Button>
-      </div>
-      <div>
-        <Button warning>Warning</Button>
-      </div>
-      <div>
-        <Button danger>Danger</Button>
-      </div>
-    </div>
-  );
+  const items = [
+    {
+      id: 'id-1',
+      label: 'This is the first label with a bit more text.',
+      content:
+        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At',
+    },
+    {
+      id: 'id-2',
+      label: 'This is a second label!',
+      content:
+        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At',
+    },
+    {
+      id: 'id-3',
+      label: 'Finally a third label.',
+      content:
+        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At',
+    },
+  ];
+
+  return <Accordion items={items} />;
 }
 
 export default App;
