@@ -1,5 +1,8 @@
 import Link from './components/Link';
+import Route from './components/Route';
 import useNavigationContext from './hooks/use-navidation-context';
+import AccordionPage from './pages/AccordionPage';
+import DropDownPage from './pages/DropDownPage';
 
 function App() {
   const { currentPath } = useNavigationContext();
@@ -7,9 +10,17 @@ function App() {
     <div>
       {currentPath}
       <br />
-      <Link to="/a1">Click me to go to a1</Link>
+      <Link to="/accordion">Go to accordion</Link>
       <br />
-      <Link to="/b1">Click me to go to b1</Link>
+      <Link to="/dropdown">Go to drop down</Link>
+      <div>
+        <Route path="/accordion">
+          <AccordionPage />
+        </Route>
+        <Route path="/dropdown">
+          <DropDownPage />
+        </Route>
+      </div>
     </div>
   );
 }
