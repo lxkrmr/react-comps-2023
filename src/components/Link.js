@@ -1,6 +1,7 @@
+import classNames from 'classnames';
 import useNavigationContext from '../hooks/use-navidation-context';
 
-function Link({ to, children }) {
+function Link({ to, children, className, ...rest }) {
   const { navigate } = useNavigationContext();
 
   const handleClick = (event) => {
@@ -12,8 +13,10 @@ function Link({ to, children }) {
     navigate(to);
   };
 
+  const classes = classNames(className, 'text-blue-500');
+
   return (
-    <a href={to} onClick={handleClick}>
+    <a className={classes} href={to} onClick={handleClick} {...rest}>
       {children}
     </a>
   );
