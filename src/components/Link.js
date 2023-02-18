@@ -13,8 +13,6 @@ function Link({ to, children, className, activeClassName, ...rest }) {
     navigate(to);
   };
 
-  const isActiveLink = to === currentPath;
-
   const classes = classNames(
     className,
     'text-blue-500',
