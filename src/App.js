@@ -1,11 +1,11 @@
 import Link from './components/Link';
 import Route from './components/Route';
-import useNavigationContext from './hooks/use-navidation-context';
+import useNavigation from './hooks/use-navidation';
 import AccordionPage from './pages/AccordionPage';
 import DropDownPage from './pages/DropDownPage';
 
 function App() {
-  const { currentPath } = useNavigationContext();
+  const { currentPath } = useNavigation();
   return (
     <div>
       {currentPath}
