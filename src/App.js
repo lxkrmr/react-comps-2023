@@ -1,7 +1,5 @@
-import { useState } from 'react';
-
 function App() {
-  return <div>App</div>;
+  return <div>{window.location.pathname}</div>;
 }
 
 export default App;
