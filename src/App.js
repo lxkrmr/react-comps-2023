@@ -4,6 +4,7 @@ import useNavigation from './hooks/use-navidation';
 import AccordionPage from './pages/AccordionPage';
 import DropDownPage from './pages/DropDownPage';
 import ButtonPage from './pages/ButtonPage';
+import ModalPage from './pages/ModalPage';
 
 function App() {
   const { currentPath } = useNavigation();
@@ -19,6 +20,9 @@ function App() {
         </Route>
         <Route path="/button">
           <ButtonPage />
+        </Route>
+        <Route path="/modal">
+          <ModalPage />
         </Route>
       </div>
     </div>
