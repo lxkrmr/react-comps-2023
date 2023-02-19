@@ -7,29 +7,26 @@ const AT_COUNTER_DECREMENT = 'counter-decrement';
 const AT_ADD_CHANGE = 'add-change';
 
 const reducer = (state, action) => {
-  if (action.type === AT_COUNTER_INCREMENT) {
-    return {
-      ...state,
-      counter: state.counter + (action.payload ?? 1),
-    };
+  switch (action.type) {
+    case AT_COUNTER_INCREMENT:
+      return {
+        ...state,
+        counter: state.counter + (action.payload ?? 1),
+      };
+    case AT_COUNTER_DECREMENT:
+      return {
+        ...state,
+        counter: state.counter - (action.payload ?? 1),
+      };
+    case AT_ADD_CHANGE:
+      return {
+        ...state,
+        add: parseInt(action.payload) ?? 0,
+      };
+    default:
+      console.error(`Unkown action.type: ${action.type}`);
+      return state;
   }
-
-  if (action.type === AT_COUNTER_DECREMENT) {
-    return {
-      ...state,
-      counter: state.counter - (action.payload ?? 1),
-    };
-  }
-
-  if (action.type === AT_ADD_CHANGE) {
-    return {
-      ...state,
-      add: parseInt(action.payload) ?? 0,
-    };
-  }
-
-  console.error(`Unkown action.type: ${action.type}`);
-  return state;
 };
 
 function Counter({ initialCount }) {
