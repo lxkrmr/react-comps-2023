@@ -2,22 +2,26 @@ import Button from './Button';
 import { useReducer } from 'react';
 import Panel from './Panel';
 
+const AT_COUNTER_INCREMENT = 'counter-increment';
+const AT_COUNTER_DECREMENT = 'counter-decrement';
+const AT_ADD_CHANGE = 'add-change';
+
 const reducer = (state, action) => {
-  if (action.type === 'counter-increment') {
+  if (action.type === AT_COUNTER_INCREMENT) {
     return {
       ...state,
       counter: state.counter + (action.payload ?? 1),
     };
   }
 
-  if (action.type === 'counter-decrement') {
+  if (action.type === AT_COUNTER_DECREMENT) {
     return {
       ...state,
       counter: state.counter - (action.payload ?? 1),
     };
   }
 
-  if (action.type === 'add-change') {
+  if (action.type === AT_ADD_CHANGE) {
     return {
       ...state,
       add: parseInt(action.payload) ?? 0,
@@ -34,19 +38,19 @@ function Counter({ initialCount }) {
     add: 0,
   });
 
-  const increment = () => dispatch({ type: 'counter-increment' });
-  const decrement = () => dispatch({ type: 'counter-decrement' });
+  const increment = () => dispatch({ type: AT_COUNTER_INCREMENT });
+  const decrement = () => dispatch({ type: AT_COUNTER_DECREMENT });
 
   const handleAddChange = (event) => {
     dispatch({
-      type: 'add-change',
+      type: AT_ADD_CHANGE,
       payload: event.target.value,
     });
   };
   const handleAddSumbit = (event) => {
     event.preventDefault();
-    dispatch({ type: 'counter-increment', payload: state.add });
-    dispatch({ type: 'add-change', payload: 0 });
+    dispatch({ type: AT_COUNTER_INCREMENT, payload: state.add });
+    dispatch({ type: AT_ADD_CHANGE, payload: 0 });
   };
 
   return (
