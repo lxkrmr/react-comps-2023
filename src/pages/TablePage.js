@@ -16,8 +16,9 @@ function TablePage() {
     },
     {
       label: 'Score',
+      header: () => <th className="bg-red-500">Score</th>,
       render: (fruit) => fruit.score,
-      sort: (a, b) => console.log('code to implement sorting'),
+      sort: (a, b) => a - b,
     },
   ];
 
