@@ -5,6 +5,7 @@ import Panel from './Panel';
 const AT_COUNTER_INCREMENT = 'counter-increment';
 const AT_COUNTER_DECREMENT = 'counter-decrement';
 const AT_ADD_CHANGE = 'add-change';
+const AT_ADD_TO_COUNTER = 'add-to-counter';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -22,6 +23,12 @@ const reducer = (state, action) => {
       return {
         ...state,
         add: parseInt(action.payload) ?? 0,
+      };
+    case AT_ADD_TO_COUNTER:
+      return {
+        ...state,
+        counter: state.counter + state.add,
+        add: 0,
       };
     default:
       console.error(`Unkown action.type: ${action.type}`);
@@ -46,8 +53,7 @@ function Counter({ initialCount }) {
   };
   const handleAddSumbit = (event) => {
     event.preventDefault();
-    dispatch({ type: AT_COUNTER_INCREMENT, payload: state.add });
-    dispatch({ type: AT_ADD_CHANGE, payload: 0 });
+    dispatch({ type: AT_ADD_TO_COUNTER });
   };
 
   return (
