@@ -8,9 +8,26 @@ function TablePage() {
     { name: 'Lime', color: 'bg-green-500', score: 4 },
   ];
 
+  const config = [
+    { label: 'Name', render: (fruit) => fruit.name },
+    {
+      label: 'Color',
+      render: (fruit) => <div className={`p-3 m-2 ${fruit.color}`} />,
+    },
+    {
+      label: 'Score',
+      render: (fruit) => fruit.score,
+      sort: (a, b) => console.log('code to implement sorting'),
+    },
+  ];
+
+  const keyFn = (fruit) => {
+    return fruit.name;
+  };
+
   return (
     <div>
-      <Table data={data} />
+      <Table data={data} config={config} keyFn={keyFn} />
     </div>
   );
 }
