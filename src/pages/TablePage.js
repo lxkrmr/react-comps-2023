@@ -1,4 +1,5 @@
 import SortableTable from '../components/SortableTable';
+import Table from '../components/Table';
 
 function TablePage() {
   const data = [
@@ -31,7 +32,11 @@ function TablePage() {
 
   return (
     <div>
+      <h1>Tables</h1>
+      <h2 className="m-4">sortable</h2>
       <SortableTable data={data} config={config} keyFn={keyFn} />
+      <h2 className="m-4">plain table</h2>
+      <Table data={data} config={config} keyFn={keyFn} />
     </div>
   );
 }
